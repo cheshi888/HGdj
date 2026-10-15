@@ -1,0 +1,51 @@
+# 爬取数据/产物（体积大且含过期签名，不提交）
+all_ids.json
+all_playlist.m3u8
+all_streams.json
+crawl_progress.json
+crawl_progress.json.bak
+progress_playlist.m3u8
+workspace.zip
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# 日志（运行产生，不提交）
+*.log
+cache/
+logs/
+
+# 进程/锁文件
+.watchdog.pid
+.daemon.pid
+.player.pid
+.crawl.lock
+
+# 本地环境
+node_global/
+.freebuff/
+.idea/
+.vscode/
+.workbuddy/
+*.tmp
+
+# 本机面板配置（端口等，改了不该被 git pull 覆盖；缺失时代码用默认 8899）
+panel.conf
+.diag_page.py
+
+# 新站 APP API 逆向探针产物（体积大）
+.probe_*
+probe_*.py
+zuzucast_probe_pool.json
+# 本地设备标识 / 旧站数据备份 / 初始化标记 / 巡检游标
+.zuzu_device.json
+.zuzu_crawl_init
+.health_cursor.json
+*.old-site.bak
+
+# 本地验证脚本与截图（一次性）
+.verify_*.py
+.verify_shots/
+._panel_check.js
