@@ -268,7 +268,8 @@ log "  黄果短剧 — VPS 部署"
 log "=============================================="
 log "[1/5] Python: $("${PYTHON_BIN}" --version 2>&1)"
 log "[2/5] 工作目录: ${APP_DIR}"
-log "[3/5] 端口: ${PORT}  (来自 ${PANEL_PORT:+环境变量 PANEL_PORT}${PANEL_PORT:-panel.conf/默认})"
+if [ -n "${PANEL_PORT:-}" ]; then _src="环境变量 PANEL_PORT"; else _src="panel.conf 或默认值"; fi
+log "[3/5] 端口: ${PORT}  (来源: ${_src})"
 
 if [ ! -f "${APP_DIR}/player_server.py" ] || [ ! -f "${APP_DIR}/watchdog.py" ]; then
   warn "[错误] 项目文件不完整（缺少 player_server.py / watchdog.py），请确认在项目目录内运行。"
